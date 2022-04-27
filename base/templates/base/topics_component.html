@@ -1,0 +1,12 @@
+<h3>Browse Clients</h3>
+<hr>
+
+<div>
+    <a href="{% url 'home' %}?q={{client.name}}">All</a>
+</div>
+
+{% for client in clients %}
+    <div>
+        <a href="{% url 'home' %}?q={{client.name}}">{{client.name}}</a>
+    </div>
+{% endfor %}

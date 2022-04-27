@@ -1,0 +1,31 @@
+<div>
+   {% for client in clients %}
+    <div>
+        {% if request.user == client.host %}
+        <a href="{% url 'update-client' client.id %}">Edit</a>
+        <a href="{% url 'delete-client' client.id %}">Delete</a>
+        {% endif %}
+        <!-- <a href="{% url 'user-profile' client.host.id %}">@{{client.host.username}}</a>  -->
+        <h5>{{client.id}} -- <a href="{% url 'client' client.id %}">{{client.name}}</a></h5>
+        <small>{{client.topic.name}}</small>
+
+        <hr>
+
+    <!--   {% for order in orders %}
+            <div>
+                <a href="{% url 'update-order' order.id %}">Edit</a>
+                <a href="{% url 'delete-order' order.id %}">Delete</a>
+
+                =<span>@{{client.host.username}}</span> 
+                <h5>{{order.id}} -- <a href="{% url 'order' order.id %}">{{order.name}}</a></h5>
+                <small>{{order.topic.name}}</small>
+                <hr>
+            </div>
+        {% endfor %} -->
+
+    </div>
+
+    {% endfor %} 
+</div>
+
+

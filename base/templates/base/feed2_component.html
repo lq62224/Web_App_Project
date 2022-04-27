@@ -1,0 +1,13 @@
+<div>
+    {% for order in orders %}
+    <div>
+        <a href="{% url 'update-order' order.id %}">Edit</a>
+        <a href="{% url 'delete-order' order.id %}">Delete</a>
+
+        =<span>@{{client.host.username}}</span> 
+        <h5>{{order.id}} -- <a href="{% url 'order' order.id %}">{{order.name}}</a></h5>
+        <small>{{order.topic.name}}</small>
+        <hr>
+    </div>
+    {% endfor %}
+</div>

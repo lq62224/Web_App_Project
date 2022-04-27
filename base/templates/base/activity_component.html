@@ -1,0 +1,8 @@
+<h3>Recent Activity</h3>
+<hr>
+{% for client in clients %}
+<div> 
+    <small>last updated "{{client.name}}" {{client.created|timesince}}</small>
+
+</div>        
+{% endfor %}
